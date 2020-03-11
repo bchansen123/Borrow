@@ -1,0 +1,9 @@
+.navigation {
+    font-size: xx-small;
+    align-content: center;
+}
+
+.navbar-shadow {
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.25);
+    border: none;
+}
