@@ -1,0 +1,25 @@
+.logo-icon {
+    width: 25px;
+}
+
+a.links {
+    text-decoration: none;
+    font-size: 10px;
+    color: white;
+    align-content: space-around;
+    
+}
+
+.card-modal {
+    background-color: white;
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.25);
+    border: none;
+}
+
+.titles {
+    font-size: x-small;
+}
+
+p {
+    font-size: x-small;
+}
