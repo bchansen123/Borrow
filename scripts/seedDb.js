@@ -19,6 +19,7 @@ const itemSeed = [
         features: "10 Inch Blade",
         city: "Salt Lake",
         state: "UT",
+        userId: 001
     },
     {
         itemId: 0002,
@@ -32,6 +33,7 @@ const itemSeed = [
         features: "10 Inch Blade",
         city: "Salt Lake",
         state: "UT",
+        userId: 001
     },
     {
         itemId: 0003,
@@ -45,6 +47,7 @@ const itemSeed = [
         features: "10 Inch Blade",
         city: "Salt Lake",
         state: "UT",
+        userId: 001
     },
     {
         itemId: 0004,
@@ -58,6 +61,7 @@ const itemSeed = [
         features: "10 Inch Blade",
         city: "Salt Lake",
         state: "UT",
+        userId: 001
     },
     {
         itemId: 0005,
@@ -71,6 +75,7 @@ const itemSeed = [
         features: "10 Inch Blade",
         city: "Salt Lake",
         state: "UT",
+        userId: 001
     }
 ]
 db.remove({});

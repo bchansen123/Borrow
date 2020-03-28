@@ -1,9 +1,9 @@
 const db = require("../models");
 
 module.exports = {
-    findById: function (req, res) {
+    inventorySearch: function (req, res) {
         db.Inventory
-        .find({itemId: req.params.id})
+        .find()
         .then(dbModel => {
             console.log(req.params.id)
             res.json(dbModel)
