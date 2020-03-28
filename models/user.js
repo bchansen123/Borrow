@@ -3,18 +3,18 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema ({
     userId: {
-        type: Integer,
+        type: Number,
         required: true
     },
     inventoryOwned: {
         itemId: {
-            type: Integer,
+            type: Number,
             required: true
         }
     },
     inventoryRented: {
         itemId: {
-            type: Integer,
+            type: Number,
             required: true
         },
         checkoutDate: {
