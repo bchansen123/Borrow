@@ -1,12 +1,13 @@
 import React, {Component} from "react";
-import HomeScreen from "../components/HomeScreen";
-import Nav from "../components/Nav";
-import API from "../../../../../../Downloads/UofU-VIRT-FSF-PT-09-2019-U-O-master/20-react/01-Activities/11-Stu_ReactRouter/Solved/client/src/utils/API";
+import API from "../utils/API";
+import ViewItem from "../components/ViewItem";
+import ItemBox from "../components/ItemBox";
 
 class Inventory extends Component {
 
     state = {
-        itemId:  [],
+        items:  [],
+        itemId: "",
         active: "",
         title: "",
         price: "",
@@ -20,18 +21,33 @@ class Inventory extends Component {
     };
 
     loadInventory = () => {
-        API.getInventory()
+        API.getInventory(1)
         .then(res =>
-            this.setState({itemId: res.data, active: "", title: "", price: "", category: "", image: "", description: ""})
-            )
+            {this.setState({items: res.data, itemId: "", active: "", title: "", price: "", category: "", image: "", description: ""})
+        console.log(res);
+        })
             .catch(err => console.log(err));
+            
     };
 
     render () {
         return (
             
         <React.Fragment>
-            <HomeScreen />
+            {this.state.items.map(item => (
+                <ItemBox>
+                    <div className="row">
+                        <div className="col-12"><h4>{item.title}</h4>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12">{item.price}
+                        </div>
+                    </div>
+                    
+                    <ViewItem />
+                </ItemBox>
+            ))}
       </React.Fragment>
         );
     }
