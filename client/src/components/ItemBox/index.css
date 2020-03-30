@@ -24,3 +24,31 @@ a.links {
 p {
     font-size: x-small;
 }
+.price-text {
+    font-size: x-small;
+    color: teal;
+}
+
+.image-sizing {
+    height: 100px;
+}
+
+.category-text {
+    font-size: xx-small;
+    color: grey;
+    font-style: italic;
+}
+
+.price-num {
+    font-weight: bold;
+    color: #777777;
+}
+
+.item-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.description-text {
+    font-size: xx-small;
+}

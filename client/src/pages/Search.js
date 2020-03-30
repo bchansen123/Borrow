@@ -6,24 +6,18 @@ import ItemBox from "../components/ItemBox";
 class Inventory extends Component {
 
     state = {
-        items:  [],
-        username: ""
+        searchItems:  [],
+        zip: ""
     }
 
     componentDidMount() {
-        this.loadInventory();
+        this.searchInventory();
     };
 
-    checkUser = () => {
-        if(loginSuccess) {
-            this.setState({user: })
-        }
-    }
-
-    loadInventory = () => {
-        API.getInventory(1)
+    searchInventory = () => {
+        API.searchInventory()
         .then(res =>
-            {this.setState({items: res.data})
+            {this.setState({searchItems: res.data, zip: })
         console.log(res);
         })
             .catch(err => console.log(err));
