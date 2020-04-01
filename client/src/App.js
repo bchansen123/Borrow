@@ -31,7 +31,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={SignIn} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/inventory/:id" component={Inventory} />
+          <Route exact path="/inventory" component={Inventory} />
        
         </Switch>
       </div>
