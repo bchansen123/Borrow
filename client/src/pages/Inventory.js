@@ -15,9 +15,9 @@ class Inventory extends Component {
     };
 
     checkUser = () => {
-        if(loginSuccess) {
-            this.setState({user: })
-        }
+        // if(loginSuccess) {
+        //     // this.setState({user: })
+        // }
     }
 
     loadInventory = () => {

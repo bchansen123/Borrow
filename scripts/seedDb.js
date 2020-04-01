@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const db = require("../models/Inventory")
+const db = require("../models")
 
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/Inventory"  
@@ -78,5 +78,15 @@ const itemSeed = [
         userId: 001
     }
 ]
-db.remove({});
-db.insertMany(itemSeed);
+
+db.Inventory
+  .remove({})
+  .then(() => db.Inventory.collection.insertMany(itemSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
