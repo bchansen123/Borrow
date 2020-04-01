@@ -17,7 +17,7 @@ class Inventory extends Component {
     searchInventory = () => {
         API.searchInventory()
         .then(res =>
-            {this.setState({searchItems: res.data, zip: })
+            {this.setState({searchItems: res.data })
         console.log(res);
         })
             .catch(err => console.log(err));

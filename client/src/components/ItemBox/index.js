@@ -7,23 +7,29 @@ import DeleteItem from "../DeleteItem";
 export function itemInfo ({children}) {
     return {children};
 }
-class ItemBox extends Component {
-    render () {       
+export default function ItemBox(props) {
+    console.log(props); 
+    // title={item.title}
+    // image={item.image}
+    // price={item.price}
+    // category={item.category}
+    // description={item.description}
+
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-12 card-modal rounded p-3 mt-3">
                         <div className="row">
                             <div className="col-2">
-                                <img src={this.props.image} alt="" className="image-sizing" />
+                                <img src={props.image} alt="" className="image-sizing" />
                             </div>
                             <div className="col-4">
                                 <div className="row">
-                                    <div className="col-12"><h4 className="item-title">{this.props.title}</h4>
+                                    <div className="col-12"><h4 className="item-title">{props.title}</h4>
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-12 category-text">Category: {this.props.category}
+                                    <div className="col-12 category-text">Category: {props.category}
                                     </div>
                                 </div>
                                 <div className="row">
@@ -31,14 +37,14 @@ class ItemBox extends Component {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-12 price-num">${this.props.price} per day
+                                    <div className="col-12 price-num">${props.price} per day
                                     </div>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className="row">
                                     <div className="col-12 description-text">
-                                        {this.props.description}
+                                        {props.description}
                                     </div>
                                 </div>
                                 <div className="row pt-5">
@@ -56,7 +62,7 @@ class ItemBox extends Component {
                 </div>
             </div>
         )
-    }
+        
 }
 
-export default ItemBox;
+ 

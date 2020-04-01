@@ -1,7 +1,8 @@
 const router = require("express").Router();
-const itemsController = require("../../controllers/itemsController");
+const listitemsRoutes = require("./listitems");
 
-router.route("/api/inventory/:id")
-.get(itemsController.inventorySearch);
+// list items routes
+router.use("/inventory", listitemsRoutes);
 
 module.exports = router;
+

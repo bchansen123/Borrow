@@ -3,7 +3,7 @@ const db = require("../models");
 module.exports = {
     inventorySearch: function (req, res) {
         db.Inventory
-        .find()
+        .find({})
         .then(dbModel => {
             console.log(req.params.id)
             res.json(dbModel)

@@ -2,6 +2,8 @@ import axios from "axios";
 
 export default {
     getInventory: function(user) {
+        console.log(user); 
+        
         return axios.get("/api/inventory/" + user);
     },
     searchInventory: function(zip) {
