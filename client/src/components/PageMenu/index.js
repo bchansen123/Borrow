@@ -9,13 +9,13 @@ class PageMenu extends Component {
                     <div className="col-12 ">
                         <ul className="nav">
                             <li className="nav-item">
-                                <a className="nav-link page-links" href="#">Parameter 1</a>
+                                <a className="nav-link page-links" href="/parameter1">Parameter 1</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link page-links" href="#">Parameter 2</a>
+                                <a className="nav-link page-links" href="/parameter2">Parameter 2</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link page-links" href="#">Parameter 3</a>
+                                <a className="nav-link page-links" href="/parameter3">Parameter 3</a>
                             </li>
                         </ul>
                     </div>

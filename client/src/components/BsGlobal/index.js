@@ -1,9 +1,18 @@
 import React from "react";
+import "./index.css";
 
-export function Container() {
+export function Container(props) {
     return (
-    <div className="container">
-        
+    <div className="container bg-color">
+       {props.children} 
+    </div>
+    );
+}
+
+export function ContainerFlex(props) {
+    return (
+    <div className="container-flex bg-color">
+       {props.children} 
     </div>
     );
 }
