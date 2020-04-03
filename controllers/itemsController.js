@@ -13,5 +13,17 @@ module.exports = {
             console.log(err)
             res.status(422).json(err)
         })
+    },
+    homeSearch: function (req, res) {
+        console.log(req.body);
+        db.Inventory
+        .find({ title: { $regex: req.body.params.search }})
+        .then(dbModel => {
+            res.json(dbModel)
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(422).json(err)
+        })
     }
 }

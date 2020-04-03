@@ -1,7 +1,11 @@
 import React, {Component} from "react";
 import API from "../utils/API";
-import ViewItem from "../components/ViewItem";
 import ItemBox from "../components/ItemBox";
+import UserMenu from "../components/UserMenu";
+import PageMenu from "../components/PageMenu";
+
+
+
 
 class Inventory extends Component {
 
@@ -14,17 +18,16 @@ class Inventory extends Component {
         this.loadInventory();
     };
 
-    checkUser = () => {
-        if(loginSuccess) {
-            this.setState({user: })
-        }
-    }
+    // checkUser = () => {
+    //     if(loginSuccess) {
+    //         this.setState({user: })
+    //     }
+    // }
 
     loadInventory = () => {
         API.getInventory(1)
         .then(res =>
             {this.setState({items: res.data})
-        console.log(res);
         })
             .catch(err => console.log(err));
             
@@ -34,6 +37,8 @@ class Inventory extends Component {
         return (
             
         <React.Fragment>
+            <UserMenu />
+            <PageMenu />
             {this.state.items.map(item => (
                 <ItemBox 
                 key={item.title}
