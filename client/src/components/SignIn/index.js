@@ -43,11 +43,11 @@ function SignIn() {
           <hr />
           <div className="row">
             <div className="col-2"></div>
-            <Link to="auth/google">
+            <a href="http://localhost:3001/auth/google">
               <div className="col-8 text-center">
                 <img src={google} alt="google sign in" className="sign-image" />
               </div>
-            </Link>
+            </a>
             <div className="col-2"></div>
           </div>
           <div className="row pt-2">

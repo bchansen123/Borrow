@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const itemsController = require("../../controllers/itemsController");
 const passport = require("passport");
+require("../../config/passport-setup");
 
 //auth login
 router.get("/auth/login", (req, res) => {
@@ -16,19 +17,21 @@ router.get("auth/logout", (req, res) => {
 });
 
 // auth with google
-router.route("/auth/google").get(
+
+router.get(
+  "/auth/google", //   console.log("Something!!!"),
   passport.authenticate("google", {
-    scope: ["profile"]
+    scope: ["profile"],
   })
 );
 
 // callback route for goole to redirect to
 router.get(
-  "auth/google/redirect",
+  "/auth/google/redirect",
   passport.authenticate("google"),
   (req, res) => {
     // res.send(req.user);
-    res.redirect("/profile/");
+    res.redirect("http://localhost:3000/inventory");
   }
 );
 router.route("/api/inventory/inventory")
