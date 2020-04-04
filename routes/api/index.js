@@ -31,9 +31,13 @@ router.get(
     res.redirect("/profile/");
   }
 );
+router.route("/api/inventory/inventory")
+  .get(itemsController.findAll)
+  .post(itemsController.addItem);
 
 router.route("/api/inventory/search").post(itemsController.homeSearch);
 router.route("/api/inventory/:id").get(itemsController.inventorySearch);
+
 
 
 

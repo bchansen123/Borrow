@@ -1,6 +1,10 @@
 import axios from "axios";
 
 export default {
+    getAll: function() {
+        return axios.get("/api/inventory/inventory");
+    },
+
     getInventory: function(user) {
         return axios.get("/api/inventory/" + user);
     },
@@ -12,5 +16,10 @@ export default {
     searchItem: function (item) {
         console.log({params: {search: item}});
         return axios.get("/api/item/" + {params: {search: item}});
+    },
+    saveItem: function(itemData) {
+        console.log(itemData);
+
+        return axios.post("/api/inventory/inventory", itemData);
     }
 }
