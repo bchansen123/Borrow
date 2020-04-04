@@ -35,5 +35,18 @@ module.exports = {
             console.log(err)
             res.status(407).json(err)
         })
+    },
+    removeItem: function(req, res) {
+        db.Inventory
+        .findById({_id: req.params.id})
+        .then(dbModel => dbModel.remove())
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(406).json(err));
+    },
+    addItem: function(req, res) {
+        db.Inventory
+        .create(req.body)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
     }
 }

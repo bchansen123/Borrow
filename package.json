@@ -4,8 +4,14 @@
   "description": "Peer to Peer tool rental application",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -18,8 +24,15 @@
   },
   "homepage": "https://github.com/bchansen123/Borrow#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cookie-session": "^1.4.0",
     "express": "^4.17.1",
-    "mongoose": "^5.9.4"
+    "mongoose": "^5.9.4",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "query-string": "^6.11.1",
+    "react-router-dom": "^5.1.2"
   }
 }

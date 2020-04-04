@@ -4,7 +4,6 @@ import API from "../utils/API";
 import Nav from "../components/Nav";
 import SearchItems from "../components/SearchItems";
 import {Container, ContainerFlex} from "../components/BsGlobal";
-import logo from '../borrow.png';
 const queryString = require("query-string")
 
 
