@@ -37,11 +37,6 @@ mongoose.connect(
   }
 );
 
-// Start the API server
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
-
 app.use(
   cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
@@ -54,3 +49,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Connect to the Mongo DB
+
+
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+});
+

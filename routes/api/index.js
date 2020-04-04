@@ -2,10 +2,6 @@ const router = require("express").Router();
 const itemsController = require("../../controllers/itemsController");
 const passport = require("passport");
 
-router.route("/api/inventory/search").post(itemsController.homeSearch);
-
-router.route("/api/inventory/:id").get(itemsController.inventorySearch);
-
 //auth login
 router.get("/auth/login", (req, res) => {
   res.render("login", { user: req.user });
@@ -20,8 +16,7 @@ router.get("auth/logout", (req, res) => {
 });
 
 // auth with google
-router.route("/auth/google").post(
-  //   console.log("Something!!!"),
+router.route("/auth/google").get(
   passport.authenticate("google", {
     scope: ["profile"]
   })
@@ -36,5 +31,14 @@ router.get(
     res.redirect("/profile/");
   }
 );
+router.route("/api/inventory/inventory")
+  .get(itemsController.findAll)
+  .post(itemsController.addItem);
+
+router.route("/api/inventory/search").post(itemsController.homeSearch);
+router.route("/api/inventory/:id").get(itemsController.inventorySearch);
+
+
+
 
 module.exports = router;
