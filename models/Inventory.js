@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const inventorySchema = new Schema ({
     itemId: {
-        type: SVGAnimatedInteger,
+        type: String,
         required: true
     },
     categoryId: {
-        type: Integer,
+        type: Number,
         required: true
     },
     category: {
@@ -19,7 +19,7 @@ const inventorySchema = new Schema ({
         required: true
     },
     price: {
-        type: Integer,
+        type: Number,
         required: true
     },
     title: {
@@ -44,9 +44,13 @@ const inventorySchema = new Schema ({
     state: {
         type: String,
         required: true
+    },
+    userId: {
+        type: Number,
+        required: true
     }
 });
 
-const User = mongoose.model("Inventory", userSchema);
+const Inventory = mongoose.model("Inventory", inventorySchema);
 
-module.exports = inventorySchema;
+module.exports = Inventory;
