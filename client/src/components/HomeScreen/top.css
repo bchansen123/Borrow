@@ -2,7 +2,7 @@
     width: 25px;
 }
 
-a.links {
+a.top-links {
     text-decoration: none;
     font-size: 10px;
     color: white;
@@ -22,4 +22,11 @@ a.links {
 
 p {
     font-size: x-small;
+}
+
+.backgroundStyle {
+    background-image: url("http://www.freeimageslive.com/galleries/workplace/designarts/pics/artist_background.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }

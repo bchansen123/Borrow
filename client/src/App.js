@@ -1,20 +1,21 @@
 import React from 'react';
 import './App.css';
-import {Container} from "./components/BsGlobal";
-import UserMenu from "./components/UserMenu";
-import PageMenu from "./components/PageMenu";
 import Inventory from './pages/Inventory';
+import Search from "./pages/Search";
+import {BrowserRouter as Router, Route} from "react-router-dom";
+import HomeScreen from './components/HomeScreen';
+import SignIn from "./components/SignIn";
 
 
 function App() {
   return (
-    <React.Fragment>
-      <UserMenu />
-      <PageMenu />
-      <Container>
-      <Inventory />
-      </Container>
-    </React.Fragment>
+    <Router>
+      <Route exact ={true} path="/" component={HomeScreen} />
+      <Route path="/home" component={HomeScreen} />
+      <Route path="/search" component={Search} />
+      <Route path="/inventory" component={Inventory} />
+      <Route path="/signin" component={SignIn} />
+    </Router>
   );
 }
 export default App;
