@@ -3,6 +3,8 @@ import API from "../utils/API";
 import ItemBox from "../components/ItemBox";
 import UserMenu from "../components/UserMenu";
 import PageMenu from "../components/PageMenu";
+import AddItem from "../components/AddItem";
+import {Link} from "react-router-dom";
 
 
 
@@ -17,7 +19,6 @@ class Inventory extends Component {
     componentDidMount() {
         this.loadInventory();
     };
-
     // checkUser = () => {
     //     if(loginSuccess) {
     //         this.setState({user: })
@@ -39,6 +40,9 @@ class Inventory extends Component {
         <React.Fragment>
             <UserMenu />
             <PageMenu />
+            <Link to="/add">
+            <AddItem />
+            </Link>
             {this.state.items.map(item => (
                 <ItemBox 
                 key={item.title}
